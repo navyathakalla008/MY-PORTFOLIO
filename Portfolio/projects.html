@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #311B92;
+            --accent: #ffd166;
+            --bg: #f7f9fa;
+            --header-bg: #232946;
+            --footer-bg: #232946;
+            --text: #232946;
+            --white: #fff;
+            --transition: 0.2s;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: var(--header-bg);
+            color: var(--white);
+            padding: 16px 0 12px 0;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+            margin: 0;
+        }
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1100;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            transition: background 0.2s;
+        }
+        .menu-icon span {
+            display: block;
+            height: 4px;
+            width: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 72px;
+            right: 32px;
+            background: var(--header-bg);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            min-width: 180px;
+            z-index: 1000;
+            padding: 12px 0;
+            border: none;
+        }
+        .dropdown-menu.show {
+            display: flex;
+        }
+        .dropdown-menu a {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 1.08rem;
+            transition: background 0.2s, color 0.2s;
+            border: none;
+            background: none;
+            text-align: left;
+            border-radius: 6px;
+        }
+        .dropdown-menu a:hover {
+            background: var(--accent);
+            color: var(--header-bg);
+        }
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color var(--transition);
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width var(--transition);
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin-left: 18px;
+            transition: color var(--transition);
+        }
+        .toggle-btn:hover {
+            color: var(--white);
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .project {
+            background: #f1f5fb;
+            border-radius: 8px;
+            padding: 32px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .project-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2a4d69;
+        }
+        .project-desc {
+            color: #444;
+        }
+        @media (max-width: 700px) {
+            header {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            nav {
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="portfolioedunet.html" style="color: #ffd166; text-decoration: none; position: absolute; left: 24px; top: 32px; font-size: 2rem;">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <span style="display: block; text-align: center; width: 100%; font-size: 2rem; font-weight: 700; letter-spacing: 1px; color: #ffd166;">Projects</span>
+    </header>
+    <div class="container">
+        <div class="project">
+            <div class="project-title">CLASSROOM CHATBOT</div>
+            <div class="project-desc">C++ OOP-based project to manage student info, C++ concepts, advanced math, attendance records.</div>
+        </div>
+        <div class="project">
+            <div class="project-title">LIBRARY SYSTEM</div>
+            <div class="project-desc">Developed a library system to manage books, members, and transactions, with real-time availability tracking.</div>
+        </div>
+        <div class="project">
+            <div class="project-title">SMART TRAFFIC LIGHT CONTROL SYSTEM</div>
+            <div class="project-desc">Designed a Smart Traffic Light Control System that dynamically adjusts signals based on real-time traffic data to optimize flow and enhance safety.</div>
+        </div>
+        <div class="project">
+            <div class="project-title">ONLINE QUIZ CHALLENGE</div>
+            <div class="project-desc">C project that quizzes users, checks answers, gives feedback on strengths, average scores.</div>
+        </div>
+        <div class="project">
+            <div class="project-title">CAFÉ EASY ORDERING SYSTEM</div>
+            <div class="project-desc">Developed a DBMS-based cafe ordering system for easy and efficient order management.</div>
+        </div>
+        <div class="project">
+            <div class="project-title">TERA</div>
+            <div class="project-desc">A clothing website with HTML, CSS, JS, and Bootstrap, customizing or designing our own outfit.</div>
+        </div>
+    </div>
+</body>
+</html>

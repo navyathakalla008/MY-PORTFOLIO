@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #311B92;
+            --accent: #ffd166;
+            --bg: #f7f9fa;
+            --header-bg: #232946;
+            --footer-bg: #232946;
+            --text: #232946;
+            --white: #fff;
+            --transition: 0.2s;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: var(--header-bg);
+            color: var(--white);
+            padding: 16px 0 12px 0;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+            margin: 0;
+        }
+        .resume-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .resume-header {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .resume-contact {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #232946;
+        }
+        .resume-contact a {
+            color: #232946;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .resume-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 28px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            color: #2a4d69;
+        }
+        .resume-section {
+            margin-bottom: 18px;
+        }
+        .resume-project-title {
+            font-weight: bold;
+            color: #232946;
+        }
+        .resume-edu {
+            margin-bottom: 8px;
+        }
+        .resume-skills-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .resume-skills-list li {
+            margin-bottom: 4px;
+        }
+        .resume-label {
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            header {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .resume-container {
+                padding: 16px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="portfolioedunet.html" style="color: #ffd166; text-decoration: none; position: absolute; left: 24px; top: 32px; font-size: 2rem;">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <span style="display: block; text-align: center; width: 100%; font-size: 2rem; font-weight: 700; letter-spacing: 1px; color: #ffd166;">Resume</span>
+    </header>
+    <div class="resume-container">
+        <div class="resume-header">NAVYATHA KALLA</div>
+        <div class="resume-contact">
+            <a href="https://github.com/navyathakalla008"><i class="fab fa-github"></i> navyathakalla008</a> |
+            <a href="https://www.linkedin.com/in/navyatha-kalla-420512291/"><i class="fab fa-linkedin"></i> navyatha kalla</a> |
+            <a href="mailto:navyathakalla31@gmail.com"><i class="fa-solid fa-envelope"></i> navyathakalla31@gmail.com</a> |
+            <a href="tel:+91948482434"><i class="fa-solid fa-phone"></i> +9948482434</a>
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Summary</div>
+            <div>Enthusiastic 2nd-year B.Tech student with a grasp of Python programming and Data Structures (DSA). Driven by a passion for problem-solving and committed to technical expertise to real-world challenges effectively.</div>
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Work Experience</div>
+            <div>Currently pursuing my B.Tech degree by doing projects innovatively in few programming languages like C, C++, Python, Data Structures and Algorithms (DSA), Design and Analysis of Algorithms (DAA), Database Management Systems (DBMS), Web development waiting for a great opportunity to showcase my talents.</div>
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Projects</div>
+            <div class="resume-project-title">CLASSROOM CHATBOT</div> 
+            <div>C++ OOP-based project to manage student info, C++ concepts, advanced math, attendance records.</div><br>
+            <div class="resume-project-title">LIBRARY SYSTEM</div>
+            <div>Developed a library system to manage books, members, and transactions, with real-time availability tracking.</div><br>
+            <div class="resume-project-title">SMART TRAFFIC LIGHT CONTROL SYSTEM</div>
+            <div>Designed a Smart Traffic Light Control System that dynamically adjusts signals based on real-time traffic data to optimize flow and enhance safety.</div><br>
+            <div class="resume-project-title">ONLINE QUIZ CHALLENGE</div>
+            <div>C project that quizzes users, checks answers, gives feedback on strengths, average scores.</div><br>
+            <div class="resume-project-title">CAFÉ EASY ORDERING SYSTEM</div>
+            <div>Developed a DBMS-based cafe ordering system for easy and efficient order management.</div><br>
+            <div class="resume-project-title">TERA</div>
+            <div>A clothing website with HTML, CSS, JS, and Bootstrap, customizing or designing our own outfit.</div>
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Education</div>
+            <div class="resume-edu">2023 - 2027 &nbsp; SRM UNIVERSITY, AP &nbsp; (CGPA: 7.38)</div>
+            <div class="resume-edu">2022 &nbsp; Class 12th BIEAP &nbsp; (Grades: 79PERCENT)</div>
+            <div class="resume-edu">2021 &nbsp; Class 10th SSC &nbsp; (Grades: 98PERCENT)</div>
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Skills</div>
+            <div><span class="resume-label">Tech Skills</span>: C language, OOPS with C++, Python, Data Structure</div>
+            <div><span class="resume-label">More Skills</span>: Decision Making, Leadership and Team Work, Design Thinking, Creative Ideation</div>
+        </div>
+    </div>
+</body>
+</html>

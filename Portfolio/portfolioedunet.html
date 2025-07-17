@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #311B92;
+      --accent: #ffd166;
+      --bg: #f7f9fa;
+      --header-bg: #232946;
+      --footer-bg: #232946;
+      --text: #232946;
+      --white: #fff;
+      --transition: 0.2s;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--header-bg);
+      color: var(--white);
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+      margin: 0;
+    }
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      transition: background 0.2s;
+    }
+    .menu-icon span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 72px;
+      right: 32px;
+      background: var(--header-bg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      min-width: 180px;
+      z-index: 1000;
+      padding: 12px 0;
+      border: none;
+    }
+    .dropdown-menu.show {
+      display: flex;
+    }
+    .dropdown-menu a {
+      color: var(--accent);
+      text-decoration: none;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 1.08rem;
+      transition: background 0.2s, color 0.2s;
+      border: none;
+      background: none;
+      text-align: left;
+      border-radius: 6px;
+    }
+    .dropdown-menu a:hover {
+      background: var(--accent);
+      color: var(--header-bg);
+    }
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      margin-left: auto;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color var(--transition);
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition);
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-size: 1.3rem;
+      cursor: pointer;
+      margin-left: 18px;
+      transition: color var(--transition);
+    }
+    .toggle-btn:hover {
+      color: var(--white);
+    }
+    main {
+      flex: 1;
+      padding: 48px 0 120px 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    footer {
+      background: var(--footer-bg);
+      color: var(--white);
+      padding: 16px 0 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .footer-nav {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 4px;
+      justify-content: center;
+    }
+    .footer-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover {
+      color: var(--white);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 2px;
+    }
+    .footer-socials a {
+      color: var(--accent);
+      font-size: 1.15rem;
+      transition: color var(--transition);
+      text-decoration: none;
+    }
+    .footer-socials a:hover {
+      color: var(--white);
+    }
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #b0bec5;
+    }
+    @media (max-width: 700px) {
+      header, main {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      nav {
+        gap: 14px;
+      }
+      .footer-socials {
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 100%; background: #232946; color: #ffd166; text-align: center; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; padding: 10px 0 0px 0; font-family: 'Segoe UI', Arial, sans-serif;">PORTFOLIO</div>
+  <div style="position: absolute; top: 12px; right: 120px; z-index: 2000;">
+    <button class="toggle-btn" title="Toggle dark/light mode"><i class="fa-solid fa-moon"></i></button>
+  </div>
+  <header>
+    <div style="display: flex; align-items: center; gap: 18px; width: 100%;">
+      <span style="font-size: 2rem; color: var(--accent);"><i class="fa-solid fa-user"></i></span>
+      <span class="brand" style="font-size: 1.7rem; font-weight: 700; color: var(--accent); letter-spacing: 1px;">NAVYATHA KALLA</span>
+      <nav style="display: flex; gap: 28px; align-items: center; margin-left: auto;">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+      <div class="menu-icon" id="menuIcon" tabindex="0" aria-label="Open menu" role="button" style="margin-left: 18px;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div style="position: relative;">
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="resume.html">Resume</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!--
+      1. Hero Section
+      2. About Me
+      3. Skills
+      4. Projects
+      5. Achievements
+      6. Blog
+      7. Testimonials
+      8. Contact
+      9. Resume
+      10. Social Media Links
+      11. Dark/Light Mode Toggle
+      12. Multilingual Support
+      13. Tech Stack
+      14. Search
+      15. Analytics
+    -->
+    <section id="home">
+      <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+        <img src="F:/2.jpg" alt="Your Photo" style="width: 240px; height: 320px; object-fit: cover; border-radius: 50% / 45%; box-shadow: 0 2px 12px rgba(44,62,80,0.12); background: #eee; transform: scale(1.12);">
+        <div style="margin-top: 32px; max-width: 500px; font-size: 1.15rem; text-align: center; color: #232946; line-height: 1.7;">
+          A dedicated third-year Computer Science student at SRM University, AP, passionate about technology and continuous learning. Currently on a journey to explore the world of coding, problem-solving, and innovation with curiosity, determination, and a growth mindset.
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div style="max-width: 900px; margin: 40px auto; background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center;">
+        <div style="font-size: 2rem; font-weight: bold; color: #232946; margin-bottom: 8px; letter-spacing: 1px;">About Me</div>
+        <div style="font-size: 2rem; font-weight: bold; color: #311B92; margin-bottom: 12px;">NAVYATHA KALLA</div>
+        <div style="font-size: 1.1rem; color: #444; line-height: 1.7; text-align: center;">
+          I am Navyatha Kalla, a third-year B.Tech student at SRM University, AP. I have a strong foundation in programming languages such as C, C++, Python, Data Structures and Algorithms (DSA), Design and Analysis of Algorithms (DAA), Database Management Systems (DBMS), Web development. I am passionate about solving real-world problems and continuously strive to enhance my technical and problem-solving abilities.
+<br><br>
+Computer Science student with a CGPA of 7.38, passionate about solving real-world problems through tech. Built projects like a ,Classroom Chatbot, TERA and Smart Traffic System etc. Eager to intern, collaborate, and contribute to impactful innovations.
+          <br><br>
+          <div style="font-size: 1.3rem; font-weight: 600; color: #232946; margin-bottom: 12px; text-align: center; letter-spacing: 1px;">Known Programming Languages</div>
+          <table style="width: 100%; max-width: 600px; margin: 0 auto 0 auto; border-collapse: separate; border-spacing: 0; font-size: 1.08rem; background: #fff; box-shadow: 0 2px 8px rgba(44,62,80,0.08); border-radius: 10px; overflow: hidden;">
+            <thead>
+              <tr style="background: #311B92; color: #fff;">
+                <th style="padding: 14px 18px; border-bottom: 2px solid #ffd166; font-size: 1.08rem;">Year</th>
+                <th style="padding: 14px 18px; border-bottom: 2px solid #ffd166; font-size: 1.08rem;">Courses</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #f7f9fa;">
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee; text-align: center;">1st SEMESTER</td>
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee;">FUNDAMENTALS OF COMPUTING AND PROGRAMMING IN C</td>
+              </tr>
+              <tr style="background: #fff;">
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee; text-align: center;">2nd SEMESTER</td>
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee;">DATA STRUCTURES</td>
+              </tr>
+              <tr style="background: #f7f9fa;">
+                <td style="padding: 12px 18px; text-align: center;">3rd SEMESTER</td>
+                <td style="padding: 12px 18px;">DESIGN AND ANALYSIS OF ALGORITHMS, OOPS WITH C++</td>
+              </tr>
+              <tr style="background: #fff;">
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee; text-align: center;">4th SEMESTER</td>
+                <td style="padding: 12px 18px; border-bottom: 1px solid #eee;">HANDS-ON WITH PYTHON, WEB DEVELOPMENT, DATABASE MANAGEMENT SYSTEM (DBMS)</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </section>
+    <section id="skills"></section>
+    <section id="projects"></section>
+    <section id="achievements"></section>
+    <section id="blog"></section>
+    <section id="testimonials"></section>
+    <section id="contact"></section>
+    <section id="resume"></section>
+  </main>
+  <footer>
+    <div class="footer-socials">
+      <a href="https://github.com/navyathakalla008" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/navyatha-kalla-420512291" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/kalla.navyatha/" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-contact" style="color: #ffd166;">
+      <span><i class="fa-solid fa-envelope"></i> navyatha_kalla@srmap.edu.in</span> &nbsp;|&nbsp;
+      <span><i class="fa-solid fa-phone"></i> +91 9948482434</span> &nbsp;|&nbsp;
+      <span><i class="fa-solid fa-location-dot"></i> Vijayawada, India</span>
+    </div>
+    <div class="footer-copy">&copy; 2024 Navyatha Kalla. All rights reserved.</div>
+  </footer>
+  <script>
+    // Dark/Light mode toggle (basic)
+    const toggleBtn = document.querySelector('.toggle-btn');
+    let dark = false;
+    toggleBtn.addEventListener('click', () => {
+      dark = !dark;
+      document.body.style.background = dark ? '#181a1b' : 'var(--bg)';
+      document.body.style.color = dark ? '#fff' : 'var(--text)';
+      document.querySelector('header').style.background = dark ? '#181a1b' : 'var(--header-bg)';
+      document.querySelector('footer').style.background = dark ? '#181a1b' : 'var(--footer-bg)';
+      toggleBtn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+    });
+    
+    // Hamburger menu functionality
+    const menuIcon = document.getElementById('menuIcon');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    document.addEventListener('click', function(event) {
+      if (menuIcon.contains(event.target)) {
+        dropdownMenu.classList.toggle('show');
+      } else if (!dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+    // Optional: close menu on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
